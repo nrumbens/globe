@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%; /* Ensure body takes full height */
+    overflow: hidden; /* Hide overflow */
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 30px; /* Increased padding for better spacing */
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 120px; /* Set a sufficient height for the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    margin-bottom: 10px; /* Adjust margin for spacing */
+}
+
+.logo {
+    max-width: 120px; /* Adjusted logo size */
+    height: auto;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px; /* Spacing between navigation items */
+}
+
+header nav ul li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif; /* Apply elegant font */
+    font-weight: 300; /* Light font weight */
+    text-transform: none; /* Remove text transformation */
+}
+
+#scene-container {
+    position: absolute;
+    top: 120px; /* Adjust top offset to match the new header height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#upload,
+#search {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    margin-bottom: 20px;
+}
+
+#upload h2,
+#search h2,
+#results h2,
+#world-photos h2 {
+    font-family: 'Playfair Display', serif; /* Elegant font */
+    font-weight: 700; /* Bold font */
+}
+
+#upload-form,
+#search-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#country,
+#search-country {
+    margin-bottom: 10px;
+    height: 40px; /* Adjusted height for better UX */
+    font-size: 16px; /* Larger font size for readability */
+    width: 97%;
+    padding: 10px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+}
+
+#upload-button,
+#search-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    width: 100%; /* Full width button */
+}
+
+#upload-button:hover,
+#search-button:hover {
+    background-color: #333; /* Dark gray on hover */
+}
+
+button {
+    background-color: #000; /* Matches header color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #333; /* Dark gray on hover */
+}
+
+#photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #000; /* Black background */
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensure footer position is relative */
+}
+
+/* Scrolling photo display */
+#photo-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.photo-scroll-row {
+    display: flex;
+    animation: scroll 60s linear infinite;
+    margin-bottom: 10px;
+}
+
+.photo-scroll-row:nth-child(2) {
+    animation-duration: 80s;
+}
+
+.photo-scroll-row:nth-child(3) {
+    animation-duration: 70s;
+}
+
+.scroll-photo-item {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.scroll-photo-item img {
+    height: 100%;
+    width: auto;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.section {
+    display: none;
+}
+
+#world-photos {
+    display: block;
+}
